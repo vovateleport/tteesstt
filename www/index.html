@@ -4,18 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html">
     <title>Demo1</title>
-    <link rel="stylesheet" type="text/css" media="all" href="./styles.css">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <link rel="stylesheet" type="text/css" media="all" href="jquery-ui/jquery-ui.css">
+    <script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
 </head>
 <body>
+<input title="Input help">
 <div id="w">
     <div id="content">
         <h1>Demo1</h1>
-        <textarea id="nodeInput" cols="100" rows="15"></textarea>
-        <a id="nodeButton" href="#">Do!</a>
-        <div id="nodeResult">
-            yo!<p>Let's also take a peek at <a href="#" class="tooltip bottom blue" data-tool="Get<br> ready because this tooltip is loooong. I mean seriously...">bottom-styled tips</a>. Do you think sideways tips could work again?</p>
+        <a id="nodeTest" href="#">TestData</a><br/>
+        <textarea id="nodeInput" cols="100" rows="15"></textarea><br/>
+        <a id="nodeButton" class="nodeButton" href="#" title="DODO!">Do!</a>
+        <div id="nodeResult" class="resultText">
         </div>
     </div>
+    <pre id="nodeDebug">
+
+    </pre>
 </div>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

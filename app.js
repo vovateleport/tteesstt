@@ -2,10 +2,12 @@
 
 var express = require('express');
 var app = express();
+var morgan = require('morgan')
+var bodyParser = require('body-parser');
 
-app.get('/yo', function (req, res) {
-  res.send('Hello World!')
-});
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(require('json-middleware').middleware());
+app.use(morgan('dev'));
 
 app.use(express.static('www', {
   dotfiles: 'ignore',
@@ -18,6 +20,14 @@ app.use(express.static('www', {
     res.set('x-timestamp', Date.now())
   }
 }));
+
+app.get('/yo', function (req, res) {
+  res.send('Hello World!')
+});
+
+var translate = require('./lib/translate');
+app.post('/translate', translate.translate);
+app.get('/sample', translate.getSample);
 
 var server = app.listen(9988, function () {
   var host = server.address().address;
