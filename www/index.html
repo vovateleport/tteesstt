@@ -5,23 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html">
     <title>Demo1</title>
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
-    <link rel="stylesheet" type="text/css" media="all" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="all" href="jquery-ui/jquery-ui.min.css">
     <script type="text/javascript" src="jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
 </head>
 <body>
-<input title="Input help">
 <div id="w">
     <div id="content">
-        <h1>Demo1</h1>
-        <a id="nodeTest" href="#">TestData</a><br/>
-        <textarea id="nodeInput" cols="100" rows="15"></textarea><br/>
-        <a id="nodeButton" class="nodeButton" href="#" title="DODO!">Do!</a>
+        <b>Enter text</b>(<a id="nodeTest" href="#">sample</a>):<br/>
+        <textarea id="nodeInput" class="inputArea" cols="100" rows="15"></textarea><br/>
+        <a id="nodeButton" class="btn" href="#">Prepare</a>
+        <br/><br/>
         <div id="nodeResult" class="resultText">
         </div>
     </div>
     <pre id="nodeDebug">
-
     </pre>
 </div>
 <script type="text/javascript" src="main.js"></script>

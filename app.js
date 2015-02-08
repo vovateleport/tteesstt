@@ -21,10 +21,6 @@ app.use(express.static('www', {
   }
 }));
 
-app.get('/yo', function (req, res) {
-  res.send('Hello World!')
-});
-
 var translate = require('./lib/translate');
 app.post('/translate', translate.translate);
 app.get('/sample', translate.getSample);
