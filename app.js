@@ -2,8 +2,9 @@
 
 var express = require('express');
 var app = express();
-var morgan = require('morgan')
+var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var config = require('config');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(require('json-middleware').middleware());
@@ -25,7 +26,9 @@ var translate = require('./lib/translate');
 app.post('/translate', translate.translate);
 app.get('/sample', translate.getSample);
 
-var server = app.listen(9988, function () {
+var httpConfig = config.get('server-http');
+
+var server = app.listen(httpConfig.port, httpConfig.host, function () {
   var host = server.address().address;
   var port = server.address().port;
 

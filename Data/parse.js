@@ -11,6 +11,8 @@ var parser = new xml2js.Parser({
   normalizeTags :true,
   explicitArray: false});
 
+exports.work = work;
+
 /**
  * @returns {vow.promise}
  */
@@ -86,5 +88,3 @@ function work(){
     return loadIntoRedis(entries);
   });
 }
-
-misc.logPromise(work(),'parsexml');
